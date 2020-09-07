@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+    nginx:
+        build: .
+        volumes:
+            - .:/app_home
+        ports:
+            - 80:80
+        command: ["nginx", "-g", "daemon off;"]
