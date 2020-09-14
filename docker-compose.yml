@@ -1,10 +1,13 @@
 version: "3.8"
 
 services:
-    nginx:
-        build: .
-        volumes:
-            - .:/app_home
-        ports:
-            - 80:80
-        command: ["nginx", "-g", "daemon off;"]
+  nginx:
+    image: ${REGISTRY_URL}/${COMPOSE_PROJECT_NAME}-main:${VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}-nginx
+    command: ["nginx"]
+    volumes:
+      - "./.secret.env:/.secret.env"
+    env_file: .env
+    ports:
+      - "${SERVER_IP}:80:80"
+      - "${SERVER_IP}:443:443"
