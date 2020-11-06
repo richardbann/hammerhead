@@ -4,10 +4,10 @@ services:
   nginx:
     image: ${REGISTRY_URL}/${COMPOSE_PROJECT_NAME}-main:${VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}-nginx
-    command: ["nginx"]
-    volumes:
-      - "./.secret.env:/.secret.env"
+    command: ["gstack", "nginx"]
     env_file: .env
+    volumes:
+      - ".:/app_home"
     ports:
       - "${SERVER_IP}:80:80"
       - "${SERVER_IP}:443:443"

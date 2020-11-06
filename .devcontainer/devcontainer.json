@@ -1,0 +1,22 @@
+{
+    "dockerFile": "Dockerfile",
+    "remoteUser": "developer",
+    "overrideCommand": false,
+    "postCreateCommand": "make init",
+     "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.pythonPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.formatting.provider": "black"
+    },
+    "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+    "extensions": [
+        "ms-python.python",
+        "timonwong.shellcheck",
+        "hangxingliu.vscode-nginx-conf-hint"
+    ]
+}

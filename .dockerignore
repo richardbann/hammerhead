@@ -1,7 +1,7 @@
 /.git
-
+/.venv
+/secrets
 /.env
-/.secret.env
 
 /logs
 /backup

@@ -6,5 +6,6 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     volumes:
-      - ".:/app_home"
-    tmpfs: /run/secrets
+      - ".:/src"
+      - "./secrets:/run/secrets"
+    entrypoint: ["/src/docker/entrypoint-dev.sh"]

@@ -1,6 +1,9 @@
 .env
-.secret.env
+.venv
+secrets
 
 /logs
 /backup
 /static
+
+*.egg-info
